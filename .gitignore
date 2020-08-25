@@ -1,0 +1,9 @@
+CMakeCache.txt
+CMakeFiles/
+LegendOfKrya*
+Makefile
+*.ninja
+cmake_install.cmake
+
+.*
+!.gitignore
