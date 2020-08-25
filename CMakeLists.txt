@@ -1,9 +1,12 @@
 # Set minimum cmake version
 cmake_minimum_required (VERSION 3.5)
 
-# Some configuration
+# Define include as source directory
 set (INCLUDE_DIR "include")
 set (SOURCE_DIR "src")
+
+# Define linked libraries
+set (LINKED_LIBS "-lsfml-graphics -lsfml-window -lsfml-system")
 
 # Define project name
 set (PROJECT_NAME "LegendOfKrya")
@@ -16,4 +19,5 @@ include_directories(${INCLUDE_DIR})
 file (GLOB SOURCE_FILES "${SOURCE_DIR}/*.cpp")
 
 # Add executable
-add_executable(LegendOfKrya ${SOURCE_FILES})
+add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+target_link_libraries(${PROJECT_NAME} ${LINKED_LIBS})
