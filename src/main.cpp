@@ -1,24 +1,18 @@
-#include <SFML/Graphics.hpp>
+#include <game.hpp>
+
+#include <iostream>
+#include <exception>
 
 int main()
 {
-	// Create the main window
-	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Application");
-
-	// Start the game loop
-	while (window.isOpen())
+	try
 	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			// Close window on exit
-			if (event.type == sf::Event::Closed)
-				window.close();
-		}
-
-		// Clear screen
-		window.clear(sf::Color::Magenta);
-		window.display();
+        Game game;
+        game.run();
+	}
+	catch (std::exception ex)
+	{
+        std::cout << "Error - " << ex.what() << std::endl;
 	}
 
 	return EXIT_SUCCESS;
