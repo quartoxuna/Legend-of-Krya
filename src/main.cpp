@@ -1,11 +1,13 @@
 #include <game.hpp>
+
+#include <iostream>
 #include <exception>
 
 int main()
 {
     try
     {
-        Game game;
+        pacman::Game game;
         game.run();
     }
     catch (std::exception ex)
@@ -13,5 +15,5 @@ int main()
         std::cerr << "ERROR: " << ex.what() << std::endl;
         return EXIT_FAILURE;
     }
-    return EXIT_SUCESS;
+    return EXIT_SUCCESS;
 }
